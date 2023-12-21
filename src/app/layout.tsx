@@ -17,11 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex`}>
-        <div>
+      <body className="flex h-dvh overflow-hidden bg-stone-50">
+        <div className="border-r-2 border-stone-950">
           <Nav/>
         </div>
-        <div>
+        <div className="w-full overflow-y-scroll">
           {children}
         </div>
        
