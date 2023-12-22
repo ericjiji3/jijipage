@@ -1,0 +1,30 @@
+.react-calendar{
+    height: 100%;
+}
+.react-calendar .react-calendar__navigation{
+    height: 30%;
+}
+.react-calendar .react-calendar__navigation .react-calendar__navigation__label{
+    margin: 0 50px;
+}
+.react-calendar .react-calendar__navigation .react-calendar__navigation__prev-button, .react-calendar__navigation__next-button{
+    margin: 0 25px;
+}
+.react-calendar .react-calendar__viewContainer{
+    height: 70%;
+}
+.react-calendar .react-calendar__viewContainer .react-calendar__month-view{
+    height: 100%;
+}
+.react-calendar .react-calendar__month-view div:first-child{
+    /* height: 100%; */
+}
+.react-calendar .react-calendar__month-view__days{
+    border-top: 2px solid rgb(12 10 9);
+    border-bottom: 2px solid rgb(12 10 9);
+    align-items: stretch;
+}
+.react-calendar .react-calendar__month-view__days .react-calendar__tile{
+    outline: 1px solid rgb(12 10 9);
+    
+}

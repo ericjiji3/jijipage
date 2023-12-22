@@ -12,7 +12,12 @@ import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same ti
 export default function DraggableComponents(props:any) { 
     const [activeDrags, setActiveDrags] = useState(0);
     const nodeRef = React.useRef(null);
+    const date = new Date(props.data.date);
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
 
+    console.log(day, month, year);
     const handleStart = () =>{
         setActiveDrags(activeDrags + 1);
         console.log('start');
@@ -36,14 +41,15 @@ export default function DraggableComponents(props:any) {
               src={props.data.featuredImage.src}
               // Use the Contentful featuredImages API to render
               // responsive featuredImages. No next/featuredImage required:
-              width={300}
-              height={300}
+              width={200}
+              height={200}
               alt={props.data.featuredImage.alt}
               className="pointer-events-none"
             />
           )}
           <Link href={`/webdev/${props.data.slug}`}>
             <h2>{props.data.title}</h2>
+            <span>{day} {month} {year}</span>
             </Link>
             </div>
         
