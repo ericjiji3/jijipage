@@ -29,7 +29,8 @@ export default function DraggableComponents(props:any) {
             handle=".handle"
             nodeRef={nodeRef}
         >
-            <div className="handle" ref={nodeRef}>
+            <div className="handle absolute" style={{top: `${props.y}%`, left: `${props.x}%` }} ref={nodeRef}>
+            
             {props.data.featuredImage && (
             <Image
               src={props.data.featuredImage.src}
@@ -41,12 +42,14 @@ export default function DraggableComponents(props:any) {
               className="pointer-events-none"
             />
           )}
+          <Link href={`/webdev/${props.data.slug}`}>
             <h2>{props.data.title}</h2>
+            </Link>
             </div>
-        {/* <Link href={`/webdev/${props.data.slug}`}> */}
+        
           
         
-          {/* </Link> */}
+          
           </Draggable>
       </div> 
     ) 

@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="border-r-2 border-stone-950">
           <Nav/>
         </div>
-        <div className="w-full overflow-y-scroll">
+        <div className="w-full overflow-hidden">
           {children}
         </div>
        

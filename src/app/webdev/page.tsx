@@ -12,13 +12,20 @@ async function Home() {
 	const blogPosts = await fetchBlogPosts('webDev')
 
 	return (
-		<main className="p-5">
-			<div className="prose">
+		<main className="relative p-5 h-full">
+			<div className="h-full">
 				<h1>My Contentful Blog</h1>
-				<div className="">
+				<div className="h-full">
 					{blogPosts.map((blogPost, key) => {
+            // keep image in bounds between 10-90
+            let xPos = Math.floor((Math.random() * 60));
+            let yPos = Math.floor((Math.random() * 60));
+
 						return (
-              <DragNDrop data={blogPost} key={key}/>
+              <div key={key}>
+                <DragNDrop data={blogPost} x={xPos} y={yPos}/>
+              </div>
+              
 						)
 					})}
 				</div>
