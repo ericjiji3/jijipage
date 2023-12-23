@@ -17,16 +17,16 @@ export default function DraggableComponents(props:any) {
     const day = date.getDate();
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
-    const [x, setX] = useState(props.x);
-    const [y, setY] = useState(props.y);
+    const [x, setX] = useState(Math.floor((Math.random() * 60)));
+    const [y, setY] = useState(Math.floor((Math.random() * 60)));
     
-    useEffect(()=>{
-      if(props.x && props.y){
-        setX(props.x);
-        setY(props.y);
-      }
+    // useEffect(()=>{
+    //   if(props.x && props.y){
+    //     setX(props.x);
+    //     setY(props.y);
+    //   }
 
-    }, [props.x, props.y])
+    // }, [props.x, props.y])
     
     const handleStart = () =>{
         setActiveDrags(activeDrags + 1);
