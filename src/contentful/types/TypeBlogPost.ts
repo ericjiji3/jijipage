@@ -2,13 +2,16 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
 
 export interface TypeBlogPostFields {
 	title?: EntryFieldTypes.Symbol
+	siteLink: EntryFieldTypes.Symbol
 	slug: EntryFieldTypes.Symbol
     date?: EntryFieldTypes.Date
 	content?: EntryFieldTypes.RichText
 	featuredImage?: EntryFieldTypes.AssetLink
 }
 
+
 export type TypeBlogPostSkeleton = EntrySkeletonType<TypeBlogPostFields>
+
 
 export type TypeBlogPost<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<
 	TypeBlogPostSkeleton,

@@ -11,6 +11,7 @@ type BlogPostEntry = Entry<TypeBlogPostSkeleton, undefined, string>
 export interface BlogPost {
     title: string
     slug: string
+	siteLink: string | null
     date: `${number}-${number}-${number}T${number}:${number}:${number}Z` | undefined
 	content: RichTextDocument | null
 	featuredImage: ContentImage | null
@@ -25,6 +26,7 @@ export function parseContentfulBlogPost(blogPostEntry?: BlogPostEntry): BlogPost
 
 	return {
 		title: blogPostEntry.fields.title || '',
+		siteLink: blogPostEntry.fields.siteLink || null,
 		slug: blogPostEntry.fields.slug,
         date: blogPostEntry.fields.date,
 		content: blogPostEntry.fields.content || null,
