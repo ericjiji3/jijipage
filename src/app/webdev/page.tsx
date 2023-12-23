@@ -18,11 +18,12 @@ async function Home() {
 				<div className="h-full">
 					{blogPosts.map((blogPost, key) => {
             // keep image in bounds between 10-90
-
+            let xPos = Math.floor((Math.random() * 60));
+            let yPos = Math.floor((Math.random() * 60));
 
 						return (
 						<div key={key}>
-							<DragNDrop data={blogPost}/>
+							<DragNDrop data={blogPost} x={xPos} y={yPos}/>
 						</div>
               
 						)

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
-import {useRef, useState} from 'react'
+import {useRef, useState, useEffect} from 'react'
 import BlackFolder from '../../../public/images/black-open-folder.png'
 // ES6
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
@@ -17,10 +17,16 @@ export default function DraggableComponents(props:any) {
     const day = date.getDate();
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
-    const xPos = Math.floor((Math.random() * 60));
-    const yPos = Math.floor((Math.random() * 60));
+    const [x, setX] = useState(props.x);
+    const [y, setY] = useState(props.y);
     
-    console.log(xPos, yPos);
+    // useEffect(()=>{
+    //   const xPos = Math.floor((Math.random() * 60));
+    //   const yPos = Math.floor((Math.random() * 60));
+    //   setX(xPos);
+    //   setY(yPos);
+    // }, [])
+    
     const handleStart = () =>{
         setActiveDrags(activeDrags + 1);
         console.log('start');
@@ -37,7 +43,7 @@ export default function DraggableComponents(props:any) {
             handle=".handle"
             nodeRef={nodeRef}
         >
-            <div className="handle absolute" ref={nodeRef} style={{top: `${yPos}%`, left: `${xPos}%` }}>
+            <div className="handle absolute" ref={nodeRef} style={{top: `${y}%`, left: `${x}%` }}>
             
             {props.data.featuredImage && (
             <Image
