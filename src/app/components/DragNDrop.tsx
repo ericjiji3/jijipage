@@ -20,12 +20,13 @@ export default function DraggableComponents(props:any) {
     const [x, setX] = useState(props.x);
     const [y, setY] = useState(props.y);
     
-    // useEffect(()=>{
-    //   const xPos = Math.floor((Math.random() * 60));
-    //   const yPos = Math.floor((Math.random() * 60));
-    //   setX(xPos);
-    //   setY(yPos);
-    // }, [])
+    useEffect(()=>{
+      if(props.x && props.y){
+        setX(props.x);
+        setY(props.y);
+      }
+
+    }, [props.x, props.y])
     
     const handleStart = () =>{
         setActiveDrags(activeDrags + 1);
