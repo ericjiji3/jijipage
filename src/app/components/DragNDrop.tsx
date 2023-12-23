@@ -17,8 +17,10 @@ export default function DraggableComponents(props:any) {
     const day = date.getDate();
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
-
-    console.log(day, month, year);
+    const xPos = Math.floor((Math.random() * 60));
+    const yPos = Math.floor((Math.random() * 60));
+    
+    console.log(xPos, yPos);
     const handleStart = () =>{
         setActiveDrags(activeDrags + 1);
         console.log('start');
@@ -35,7 +37,7 @@ export default function DraggableComponents(props:any) {
             handle=".handle"
             nodeRef={nodeRef}
         >
-            <div className="handle absolute" style={{top: `${props.y}%`, left: `${props.x}%` }} ref={nodeRef}>
+            <div className="handle absolute" ref={nodeRef} style={{top: `${yPos}%`, left: `${xPos}%` }}>
             
             {props.data.featuredImage && (
             <Image
