@@ -12,7 +12,7 @@ async function Home() {
 	const blogPosts = await fetchBlogPosts('webDev')
 
 	return (
-		<main className="relative p-5 h-full">
+		<main className="relative p-14 h-full overflow-hidden">
 			<div className="h-full">
 				<h1>My Contentful Blog</h1>
 				<div className="h-full">
@@ -22,9 +22,9 @@ async function Home() {
             let yPos = Math.floor((Math.random() * 60));
 
 						return (
-              <div key={key}>
-                <DragNDrop data={blogPost} x={xPos} y={yPos}/>
-              </div>
+						<div key={key}>
+							<DragNDrop data={blogPost} x={xPos} y={yPos}/>
+						</div>
               
 						)
 					})}

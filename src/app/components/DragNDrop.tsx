@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 import {useRef, useState} from 'react'
+import BlackFolder from '../../../public/images/black-open-folder.png'
 // ES6
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
 // import { Draggable, DropResult, Droppable } from "react-beautiful-dnd";
@@ -44,13 +45,25 @@ export default function DraggableComponents(props:any) {
               width={200}
               height={200}
               alt={props.data.featuredImage.alt}
-              className="pointer-events-none"
+              className="pointer-events-none mb-1 border border-stone-950"
             />
           )}
-          <Link href={`/webdev/${props.data.slug}`}>
-            <h2>{props.data.title}</h2>
-            <span>{day} {month} {year}</span>
-            </Link>
+          <Link href={`/webdev/${props.data.slug}`} className="group flex justify-between">
+            <div>
+              <h2 className='group-hover:underline'>{props.data.title}</h2>
+              <span className='group-hover:underline'>{day} {month} {year}</span>
+            </div>
+            <div>
+              <Image
+                src={BlackFolder}
+                width={20}
+                height={20}
+                alt="oops"
+                className='group-hover:border-b pb border-stone-950'
+              />
+            </div>
+
+          </Link>
             </div>
         
           

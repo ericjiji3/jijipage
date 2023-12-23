@@ -19,12 +19,57 @@
 .react-calendar .react-calendar__month-view div:first-child{
     /* height: 100%; */
 }
+
+.react-calendar .react-calendar__century-view .react-calendar__tile{
+    outline: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__decade-view__years .react-calendar__tile{
+    outline: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__year-view__months .react-calendar__tile{
+    outline: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__century-view{
+    border-top: 2px solid rgb(12 10 9);
+    border-bottom: 2px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__decade-view__years{
+    border-top: 2px solid rgb(12 10 9);
+    border-bottom: 2px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__year-view__months{
+    border-top: 2px solid rgb(12 10 9);
+    border-bottom: 2px solid rgb(12 10 9);
+}
 .react-calendar .react-calendar__month-view__days{
     border-top: 2px solid rgb(12 10 9);
     border-bottom: 2px solid rgb(12 10 9);
-    align-items: stretch;
+}
+
+.react-calendar .react-calendar__decade-view__years .react-calendar__tile:nth-last-child(-n+3){
+    border-bottom: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__decade-view__years .react-calendar__tile:last-child{
+    border-right: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__century-view .react-calendar__tile:nth-last-child(-n+3){
+    border-bottom: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__century-view .react-calendar__tile:last-child{
+    border-right: 1px solid rgb(12 10 9);
+}
+.react-calendar .react-calendar__tile{
+    padding: 5px;
+}
+.react-calendar .react-calendar__month-view__weekdays__weekday{
+    padding-left: 5px;
+}
+.react-calendar .react-calendar__tile abbr{
+    display: block;
+    text-align: left;
 }
 .react-calendar .react-calendar__month-view__days .react-calendar__tile{
     outline: 1px solid rgb(12 10 9);
     
 }
+

@@ -49,9 +49,9 @@ async function BlogPostPage({ params }: BlogPostPageProps) {
 	}
 
 	return (
-		<main className="p-[6vw]">
-			<Link href="/webdev">← Posts</Link>
-			<div className="prose mt-8 border-t pt-8">
+		<main className="">
+			<Link href="/webdev" className='block border-b-2 border-stone-950 pb-14 pl-14 pt-14 hover:underline'>← Posts</Link>
+			<div className="prose mt-14 px-14">
 				{/* Render the blog post image */}
 				{blogPost.featuredImage && (
 					<Image

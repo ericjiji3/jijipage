@@ -6,11 +6,13 @@ export default function Nav(){
     return(
         <div className="flex flex-col justify-between h-full p-14">
             <div>
-                <Image
-                    src={Logo}
-                    width={75}
-                    alt="oops"
-                />
+                <Link href='https://jiji.lol/' target="_blank">
+                    <Image
+                        src={Logo}
+                        width={75}
+                        alt="oops"
+                    />
+                  </Link>
             </div>
             <div>
                 <Link className="block" href='/'>HOME</Link>

@@ -9,7 +9,7 @@ async function Home() {
 	const blogPosts = await fetchBlogPosts('personal')
 
 	return (
-		<main className="h-full">
+		<main className="h-full overflow-hidden">
 			<Calendar data={blogPosts}/>
 
 		</main>
